@@ -108,9 +108,9 @@ typedef enum ZydisMemoryOperandType_
 /* Decoded operand                                                                                */
 /* ---------------------------------------------------------------------------------------------- */
 
-   /**
-      * Extended info for register-operands.
-      */
+/**
+ * Extended info for register-operands.
+ */
 typedef struct ZydisDecodedOperandReg_ {
     /**
      * The register value.
@@ -683,8 +683,8 @@ typedef enum ZydisPrefixType_
 /* Decoded instruction                                                                            */
 /* ---------------------------------------------------------------------------------------------- */
 /**
-     * Detailed info about the `XOP` prefix.
-     */
+ * Detailed info about the `XOP` prefix.
+ */
 typedef struct ZydisDecodedInstructionRawXop_ {
     /**
      * Extension of the `ModRM.reg` field (inverted).
