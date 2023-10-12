@@ -41,27 +41,31 @@ option(ZYDIS_FEATURE_SEGMENT
 option(ZYDIS_BUILD_SHARED_LIB
     "Build shared library"
     OFF)
-option(ZYDIS_BUILD_EXAMPLES
-    "Build examples"
-    ON)
-option(ZYDIS_BUILD_TOOLS
-    "Build tools"
-    ON)
-option(ZYDIS_BUILD_MAN
-    "Build manpages for the tools (requires Ronn-NG)"
-    OFF)
-option(ZYDIS_BUILD_DOXYGEN
-    "Build doxygen documentation (requires Doxygen)"
-    ON)
-option(ZYDIS_BUILD_TESTS
-    "Build tests"
-    OFF)
-option(ZYDIS_FUZZ_AFL_FAST
-    "Enables AFL persistent mode and reduces prints in ZydisFuzzIn"
-    OFF)
-option(ZYDIS_LIBFUZZER
-    "Enables LLVM libfuzzer mode and reduces prints in ZydisFuzzIn"
-    OFF)
+    
+# Certain options are only availble with top-level builds.
+if(ZYDIS_ROOT_PROJECT)
+    option(ZYDIS_BUILD_EXAMPLES
+        "Build examples"
+        ON)
+    option(ZYDIS_BUILD_TOOLS
+        "Build tools"
+        ON)
+    option(ZYDIS_BUILD_MAN
+        "Build manpages for the tools (requires Ronn-NG)"
+        OFF)
+    option(ZYDIS_BUILD_DOXYGEN
+        "Build doxygen documentation (requires Doxygen)"
+        ON)
+    option(ZYDIS_BUILD_TESTS
+        "Build tests"
+        OFF)
+    option(ZYDIS_FUZZ_AFL_FAST
+        "Enables AFL persistent mode and reduces prints in ZydisFuzzIn"
+        OFF)
+    option(ZYDIS_LIBFUZZER
+        "Enables LLVM libfuzzer mode and reduces prints in ZydisFuzzIn"
+        OFF)
+endif()
 
 # Dependencies
 option(ZYAN_SYSTEM_ZYCORE
